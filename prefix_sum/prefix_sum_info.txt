@@ -1,0 +1,9 @@
+- compute the cumulative sum of a sequence of numbers
+- resulting array is the sum of all elements of the original array up to that index
+- used in range sum queries.
+
+Steps -
+    Initialize an array of the same size as the input array.
+    The first element of the prefix sum array is the same as the first element of the input array.
+    For each subsequent element, add the current element of the input array to the previous element of the prefix sum array.
+        prefix[i]=prefix[i−1]+arr[i]

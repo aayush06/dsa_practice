@@ -1,0 +1,46 @@
+- function calls a itself
+- memory is allcated in form of stack for each function calls, so the memory for a called function is 
+allocated on top of the memory allocated for calling the function.
+
+example factorial using recursion
+
+def fact(n):
+    if n==1 or n==0:
+        return 1
+    else:
+        return n*fact(n-1)
+
+fact(5)
+
+#### Memory representation 
+
+    |         |
+    | fact(1) |
+    | fact(2) |
+    | fact(3) |
+    | fact(4) | 
+    | fact(5) |
+    |_________|
+
+
+evaluation in tree format
+
+                fact(5)
+                /       \
+               5        fact(4)
+                        /      \
+                       4      fact(3)
+                               /     \
+                              3      fact(2)
+                                      /     \
+                                      2     fact(1) = 1
+
+returns 1*2*3*4*5 = 120
+
+
+ direct recursion where function1 calls function1 i.e. itself
+ indirect recursion where function1 calls function2 which later calls function1
+
+
+- use recursion when problem can be broken to similar sub problems
+- if no of loops are not known 
